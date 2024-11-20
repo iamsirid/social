@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/go-pg/pg/v10"
+	"github.com/lib/pq"
 )
 
 type Post struct {
