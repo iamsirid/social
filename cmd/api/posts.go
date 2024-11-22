@@ -7,7 +7,7 @@ import (
 	"strconv"
 
 	"github.com/go-chi/chi/v5"
-	"github.com/iamsirid/social/internal/env/store"
+	"github.com/iamsirid/social/internal/store"
 )
 
 type postKey string

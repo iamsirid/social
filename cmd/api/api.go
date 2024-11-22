@@ -7,7 +7,7 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
-	"github.com/iamsirid/social/internal/env/store"
+	"github.com/iamsirid/social/internal/store"
 )
 
 type application struct {
@@ -44,10 +44,18 @@ func (app *application) mount() http.Handler {
 			r.Post("/", app.createPostHandler)
 
 			r.Route("/{postID}", func(r chi.Router) {
+				r.Use(app.postsContextMiddleware)
 				r.Get("/", app.getPostHandler)
 
 				r.Delete("/", app.deletePostHandler)
 				r.Patch("/", app.updatePostHandler)
+			})
+		})
+
+		r.Route("/users", func(r chi.Router) {
+
+			r.Route("/{userID}", func(r chi.Router) {
+				r.Get("/", app.getPostHandler)
 			})
 		})
 	})

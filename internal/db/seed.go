@@ -8,7 +8,7 @@ import (
 
 	"math/rand"
 
-	"github.com/iamsirid/social/internal/env/store"
+	"github.com/iamsirid/social/internal/store"
 )
 
 var usernames = []string{

@@ -5,7 +5,7 @@ import (
 
 	"github.com/iamsirid/social/internal/db"
 	"github.com/iamsirid/social/internal/env"
-	"github.com/iamsirid/social/internal/env/store"
+	"github.com/iamsirid/social/internal/store"
 )
 
 func main() {
