@@ -1,3 +1,7 @@
+# For Learning Purpose
+
+## no .gitignore, everything included
+
 Start dev
 `air`
 

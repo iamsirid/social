@@ -7,10 +7,10 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-var Validator *validator.Validate
+var Validate *validator.Validate
 
 func init() {
-	Validator = validator.New(validator.WithRequiredStructEnabled())
+	Validate = validator.New(validator.WithRequiredStructEnabled())
 }
 
 func writeJSON(w http.ResponseWriter, status int, data any) error {
@@ -36,4 +36,12 @@ func writeJSONError(w http.ResponseWriter, status int, message string) error {
 	}
 
 	return writeJSON(w, status, &envelope{Error: message})
+}
+
+func (app *application) jsonResponse(w http.ResponseWriter, status int, data any) error {
+	type envelope struct {
+		Data any `json:"data"`
+	}
+
+	return writeJSON(w, status, &envelope{Data: data})
 }
