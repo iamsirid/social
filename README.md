@@ -9,4 +9,4 @@ Start postgres (docker)
 `docker compose up`
 
 health check
-`curl http://localhost:3000/v1/health -v`
+`curl http://localhost:8080/v1/health -v`
